@@ -1,0 +1,444 @@
+<html>
+  <head>
+    <title>EATALIANO</title>
+<style>
+body{
+  font-family: Arial;
+  height: 90.5%;
+  margin: 0;
+
+}
+.fontname{
+  font-stretch: expanded;
+  font-family: Arial;
+  padding-left: 50px;
+  color: white;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+.bottom{
+  overflow: hidden;
+  background-color: #333;
+   color: #f2f2f2;
+  
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+
+}
+.middle {
+  position: absolute;
+  top: 5%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding-top: 55px;
+}
+div.transbox
+{ 
+text-align: center;
+padding-top: 2px;
+padding-right: 50px;
+padding-bottom: 2px;
+padding-left: 50px;
+
+margin-top: 50px;
+margin-bottom: 2px;
+background-color: rgb(255,255,255,0.8);
+
+}
+
+
+img {
+  opacity: 0.8;
+}
+@keyframes examples{
+ 0%{color: blue;}
+25%{color:green;}
+50%{color:red;}
+75%{color: brown;}
+100%{color: darkorange;}
+}
+.abcd{
+   animation-name: examples;
+animation-duration: 12s;
+animation-iteration-count: infinite;
+margin: 0 auto ;
+}
+.btn:hover {opacity: 1}
+
+.middle1 {
+  position: absolute;
+  top: 260%;
+  left: -5%;
+  transform: translate(-60%, -40%);
+  padding-top: 55px;
+}
+div.transbox1
+{ 
+text-align: center;
+padding-top: 2px;
+padding-right: 50px;
+padding-bottom: 2px;
+padding-left: 50px;
+opacity: 0.8;
+margin-top: 50px;
+margin-bottom: 2px;
+background-color: #ffffff;
+width : 200%;
+
+}
+
+</style>
+</head>
+<script>
+   function check_up()
+  {
+      document.getElementById('submit').disabled=false; 
+  }
+  function validation()
+  {
+    var fname=document.online.fname.value;
+    var lname=document.online.lname.value;
+    var address=document.online.address.value;
+    var pcode=document.online.pcode.value;
+    var phno=document.online.phno.value;
+  document.getElementById('submit').disabled=true;
+    var aregex=/^[A-Za-z]*$/;
+    var check1=aregex.test(fname);
+    var check2=aregex.test(lname);
+     var count=0;
+    var pq=document.getElementsByName('dish[]');
+ for(i = 0; i < pq.length; i++) 
+    { 
+      if(pq[i].checked) 
+        {
+          count=count+1; 
+        }
+
+    }
+
+    var bregex=/^[0-9]{6}$/;
+    var check4=bregex.test(pcode);
+    var cregex=/^[0-9]{10}$/;
+    var check5=cregex.test(phno);
+
+    if(fname=="")
+    {
+      window.alert("Please Enter First Name.");
+      document.online.fname.focus();
+    }
+    else if(check1==false)
+    {
+      window.alert("Please Enter A Valid First Name");
+      document.online.fname.focus();
+    }
+    else if(lname=="")
+    {
+      window.alert("Please Enter Last Name.");
+     document.online.lname.focus();
+    }
+    else if(check2==false)
+    {
+      window.alert("Please Enter A Valid Last Name");
+       document.online.lname.focus();
+      
+    }
+    else if(address=="")
+    {
+      window.alert("Please Enter Your Address");
+      document.online.address.focus();
+    }
+
+    else if(pcode=="")
+    {
+      window.alert("Please Enter Your Pincode");
+       document.online.pcode.focus();
+    }
+
+    else if(check4==false)
+    {
+      window.alert("Please Enter A Valid Pincode");
+     document.online.pcode.focus();
+    }
+    else if(phno=="")
+    {
+      window.alert("Please Enter Your Phone Number");
+       document.online.phno.focus();
+    }
+     else if(check5==false)
+    {
+      window.alert("Please Enter A Valid Phone Number");
+       document.online.phno.focus();
+    }
+    
+    else if(count==0)
+    {
+      alert("Please Select Atleast A Dish");
+    
+    }
+    else{
+     
+          document.getElementById('submit').disabled=false;
+    }
+   
+    }
+
+  
+ 
+</script>
+
+
+<body>
+
+
+<div class="topnav">
+  <a href="about.html">About Us</a>
+  <a  href="contact us.html">Contact Us</a>
+  <a href="chef.html">Chef</a>
+  <a  class="active" href="online.html">Online Order</a>
+  <a  href="gallery.html">Gallery</a>
+  <a href="blog.html">Blog</a>
+  <a   href="menu.html">Menu</a>
+  <a  href="home.html">Home</a>
+ <p class=fontname><b> E &nbsp; A &nbsp; T &nbsp; A &nbsp; L &nbsp; I &nbsp; A &nbsp;  N &nbsp; O  <b></p> 
+ </div>
+
+<div class="container">
+  <img src="https://images.unsplash.com/photo-1544738122-52d63216e052?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" style="width:100% ;">
+</img> 
+
+<div class="middle">
+  <div class="transbox">
+  
+   <div style="color: black; font-size: 25px;"> <div class="abcd">
+ORDER YOUR DELICIOUS FOOD NOW!!! 
+</div>
+
+
+</div>
+
+<div class="middle1">
+  <div class="transbox1">
+
+      
+      <fieldset>
+    <legend align=center><u><h3><div style="color: black; font-size: 30px;">DELIVERY DETAILS</div></h3></u></legend><br>
+    <center>
+    <form name="online" id="online" action="online.php" method="POST"><div style="color: black; font-size: 18px;">
+       <label for="fname">First Name: </label>
+        <input onchange="check_up()" type="text" id="fname" name="fname" placeholder="Your first name"> <br><br>
+        <label for="lname">Last Name: </label>
+        <input onchange="check_up()" type="text" id="lname" name="lname" placeholder="Your last name"><br><br>
+
+        <label for="subject">Address: </label>
+        <input onchange="check_up()" type="text" id="address" name="address" placeholder="Enter Your Address" ></textarea><br><br>
+
+        <label for="pcode">Pincode: </label>
+        <input onchange="check_up()" type="text" id="pcode" name="pcode" placeholder="Enter Pincode"><br><br>
+          <label for="phno">Phone Number: </label>
+        <input onchange="check_up()" type="text" id="phno" name="phno" placeholder="Your Phone Number"><br><br>
+         
+        <label for="dishcode">Dish Code: </label>
+       
+
+        <input onchange="check_up()" type="checkbox" id="dish101" name="dish[]" value="101">
+        <label for="dish101"> 101</label>
+        <input onchange="check_up()" type="checkbox" id="dish102" name="dish[]"value="102">
+        <label for="dish102"> 102</label>
+
+        <input onchange="check_up()" type="checkbox" id="dish103" name="dish[]"value="103">
+        <label for="dish103">  103</label>
+      
+
+       <input onchange="check_up()" type="checkbox" id="dish104" name="dish[]"value="104">
+       <label for="dish104"> 104</label>
+       <input onchange="check_up()" type="checkbox" id="dish105" name="dish[]"value="105">
+       <label for="dish105"> 105</label><br>
+
+       <input onchange="check_up()" type="checkbox" id="dish106" name="dish[]"value="106">
+       <label for="dish106">  106</label>
+
+        <input onchange="check_up()" type="checkbox" id="dish107" name="dish[]"value="107">
+        <label for="dish107"> 107</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish108" name="dish[]"value="108">
+       <label for="dish108"> 108</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish109" name="dish[]"value="109">
+       <label for="dish109">  109</label>
+      
+
+     <input onchange="check_up()" type="checkbox" id="dish110" name="dish[]"value="110">
+        <label for="dish110"> 110</label>
+      <input onchange="check_up()" type="checkbox" id="dish111" name="dish[]"value="111">
+       <label for="dish111"> 111</label><br>
+
+
+      <input onchange="check_up()" type="checkbox" id="dish112" name="dish[]"value="112">
+       <label for="dish112">  112</label>
+
+       <input onchange="check_up()" type="checkbox" id="dish113" name="dish[]"value="113">
+        <label for="dish113"> 113</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish114" name="dish[]"value="114">
+       <label for="dish114"> 114</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish115" name="dish[]"value="115">
+       <label for="dish115">  115</label>
+      
+
+     <input onchange="check_up()" type="checkbox" id="dish116" name="dish[]"value="116">
+        <label for="dish116"> 116</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish117" name="dish[]"value="117">
+       <label for="dish117"> 117</label><br>
+
+      <input onchange="check_up()" type="checkbox" id="dish118" name="dish[]"value="118">
+       <label for="dish118">  118</label>
+
+       <input onchange="check_up()" type="checkbox" id="dish119" name="dish[]"value="119">
+        <label for="dish119"> 119</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish120" name="dish[]"value="120">
+       <label for="dish120"> 120</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish121" name="dish[]"value="121">
+       <label for="dish121">  121</label>
+      
+
+     <input onchange="check_up()" type="checkbox" id="dish122" name="dish[]"value="122">
+        <label for="dish122"> 122</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish123" name="dish[]"value="123">
+       <label for="dish123"> 123</label><br>
+
+      <input onchange="check_up()" type="checkbox" id="dish124" name="dish[]"value="124">
+       <label for="dish124">  124</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish125" name="dish[]"value="125">
+       <label for="dish125"> 125</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish126" name="dish[]"value="126">
+       <label for="dish126">  126</label>
+      
+
+     <input onchange="check_up()" type="checkbox" id="dish127" name="dish[]"value="127">
+        <label for="dish127"> 127</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish128" name="dish[]"value="128">
+       <label for="dish128"> 128</label>
+
+      <input onchange="check_up()" type="checkbox" id="dish301" name="dish[]"value="301">
+       <label for="dish301">  301</label><br>
+
+             <input onchange="check_up()" type="checkbox" id="dish302" name="dish[] "value="302">
+       <label for="dish302">  302</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish303" name="dish[] "value="303">
+       <label for="dish303">  303</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish304" name="dish[] "value="304">
+       <label for="dish304">  304</label>
+
+   <input onchange="check_up()" type="checkbox" id="dish305" name="dish[]"value="305">
+       <label for="dish305">  305</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish306" name="dish[]" value="306">
+       <label for="dish306">  306</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish307" name="dish[]"value="307">
+       <label for="dish307">  307</label><br>
+
+             <input onchange="check_up()" type="checkbox" id="dish308" name="dish[]"value="308">
+       <label for="dish308">  308</label>
+
+                    <input onchange="check_up()" type="checkbox" id="dish309" name="dish[]"value="309">
+       <label for="dish309">  309</label>
+
+
+      <input onchange="check_up()" type="checkbox" id="dish001" name="dish[]"value="001">
+       <label for="dish001">  001</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish002" name="dish[]"value="002">
+       <label for="dish002">  002</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish003" name="dish[]"value="003">
+       <label for="dish003">  003</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish004" name="dish[]"value="004">
+       <label for="dish004">  004</label><br>
+
+   <input onchange="check_up()" type="checkbox" id="dish005" name="dish[]"value="005">
+       <label for="dish005">  005</label>
+
+             <input onchange="check_up()" type="checkbox" id="dish006" name="dish[]"value="006">
+       <label for="dish006">  006</label>
+
+          <input onchange="check_up()" type="checkbox" id="dish007" name="dish[]"value="007">
+       <label for="dish007">  007</label>
+
+       <input onchange="check_up()" type="checkbox" id="dish008" name="dish[]"value="008">
+       <label for="dish008">  008</label>
+
+        <input onchange="check_up()" type="checkbox" id="dish009" name="dish[]"value="009">
+       <label for="dish009">  009</label> <br>
+
+<br><br>
+</div>
+
+  <button type="submit" id="submit" style="background-color: red; color: white; border-color: black;" onclick="validation()">Take away</button>  &nbsp
+  <button type="submit" style="background-color: red; color: white; border-color:black; "onclick="validation()">Delivery at your door steps</button><br><br>
+
+    </form>
+    </center>
+  </fieldset><br><br>
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class=bottom>
+<div style="padding-left: 40px; float: left;">
+  <p class=ab><b>CONTACT US:</b><p> 
+  <p>Mail us at: abc@gmail.com</p>
+  <p> Phone Number: +91987654321</p>
+</div>
+<div style="padding-right: 60px; float: right;">
+  <p class=ab><b>CONNECT WITH US:</b><p> 
+  <p>Whatsapp: +919988776655</p>
+  <p>Instagram: italiano_rest</p>
+</div>
+ </footer>
+</body>
+</html>   

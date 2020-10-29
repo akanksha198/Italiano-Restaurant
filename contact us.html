@@ -1,0 +1,240 @@
+<html>
+<head>
+<style>
+body{
+  font-family: Arial;
+  height: 90%;
+  margin: 0;
+
+  
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+
+
+.containerr {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  background-size: cover;
+  padding: 10px;
+
+}
+.fontname{
+	font-stretch: expanded;
+	font-family: Arial;
+	padding-left: 50px;
+	color: white;
+}
+hr{ 
+  display: block;
+  border-style: inset;
+  border-width: 1px;
+} 
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 55px;
+}
+div.transbox
+{ 
+text-align: center;
+padding-top: 50px;
+padding-right: 50px;
+padding-bottom: 2px;
+padding-left: 50px;
+
+margin-top: 50px;
+margin-bottom: 2px;
+background-color: rgb(255,255,255,0.8);
+
+}
+
+.bottom{
+	overflow: hidden;
+  background-color: #333;
+   color: #f2f2f2;
+
+}
+.img{
+	opacity: 0.8;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+
+
+
+}
+</style>
+</head>
+<script>
+
+  function check_up()
+  {
+      document.getElementById('submit').disabled=false; 
+  }
+  function validation()
+  {
+    var firstname=document.contactus.fname.value;
+    var lastname=document.contactus.lname.value;
+    var emailid=document.contactus.emailid.value;
+    var phno=document.contactus.phno.value;
+    var query=document.contactus.query.value;
+    document.getElementById('submit').disabled=true;
+    var aregex=/^[A-Za-z]*$/;
+    var check1=aregex.test(firstname);
+    var check2=aregex.test(lastname);
+    var bregex=/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+    var check3=bregex.test(emailid);
+    var cregex=/^[0-9]{10}$/;
+    var check4=cregex.test(phno);
+    if(firstname=="")
+    {
+      window.alert("Please Enter First Name.");
+      document.contactus.fname.focus();
+    }
+    else if(check1==false)
+    {
+      window.alert("Please Enter A Valid First Name");
+      document.contactus.fname.focus();
+    }
+    else if(lastname=="")
+    {
+      window.alert("Please Enter Last Name.");
+     document.contactus.lname.focus();
+    }
+    else if(check2==false)
+    {
+      window.alert("Please Enter A Valid Last Name");
+       document.contactus.lname.focus();
+      
+    }
+    else if(emailid=="")
+    {
+      window.alert("Please Enter Your Email Address");
+      document.contactus.emailid.focus();
+    }
+
+    else if(check3==false)
+    {
+      window.alert("Please Enter A Valid Email Address");
+       document.contactus.emailid.focus();
+    }
+
+    else if(phno=="")
+    {
+      window.alert("Please Enter Your Phone Number");
+      document.contactus.phno.focus();
+    }
+
+    else if(check4==false)
+    {
+      window.alert("Please Enter A Valid Phone Number");
+      document.contactus.emailid.focus();
+    }
+    else if(query=="")
+    {
+      window.alert("Please Enter Your Query");
+      document.contactus.query.focus();
+    }
+    else
+    {
+     document.getElementById('submit').disabled=false;
+    }
+  }
+
+</script>
+
+<body>
+
+<div class="topnav">
+  <a href="about.html">About Us</a>
+  <a  class="active" href="contact us.html">Contact Us</a>
+  <a href="chef.html">Chef</a>
+  <a href="online.html">Online Order</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="blog.html">Blog</a>
+  <a  href="menu.html">Menu</a>
+  <a href="home.html">Home</a>
+ <p class=fontname><b> E &nbsp; A &nbsp; T &nbsp; A &nbsp; L &nbsp; I &nbsp; A &nbsp;  N &nbsp; O  <b></p> 
+ </div>
+
+<div class="container">
+  <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style="width:100% "></img>
+</div>
+
+<div class="middle">
+	
+  
+    <div class="transbox">
+		<center>
+	<form name="contactus" id="contactus" action="contact.php" method="POST">
+ <fieldset>
+  <legend>Contact Us:</legend>
+  <br>
+  <label for="fname">First name:</label>
+  <input onchange="check_up()" type="text" id="fname" name="fname" placeholder="Enter Your First Name"><br><br>
+  <label for="lname">Last name:</label>
+  <input onchange="check_up()" type="text" id="lname" name="lname"  placeholder="Enter Your Last Name"><br><br>
+  <label for="emailid">Email:</label>
+  <input onchange="check_up()" type="email" id="emailid" name="emailid"  placeholder="Enter Your Email Address"><br><br>
+  <label for="phno">Phone Number:</label>
+  <input onchange="check_up()" type="text" id="phno" name="phno"  placeholder="Enter Your Mobile Number"><br><br>
+  <label for="query">Your Query:</label>
+  <input onchange="check_up()" type="text" id="query" name="query" placeholder="Enter Your Query In Brief"><br><br>
+
+  <button id="submit" style="background-color: blue; color: white; border-color: black;" type="submit" onclick="validation()">Submit</button> &nbsp &nbsp
+  <button style="background-color: red; color: white; border-color: black; "type="reset" onclick="contactus.reset()">Reset</button><br><br>
+  </center>
+		</form>
+		</center>
+
+	</fieldset><br><br>
+	<center>	
+	
+	
+  </div>  
+
+	</div>
+	</div>
+</div>
+<footer class=bottom>
+<div style="
+   padding-left: 50px;
+   float: left;">
+  <p class=ab><b>CONTACT US:</b><p> 
+  <p>Mail us at: abc@gmail.com</p>
+  <p> Phone Number: +91987654321</p>
+</div>
+<div style="
+   padding-right: 50px;
+   float: right;">
+  <p class=ab><b>CONNECT WITH US:</b><p> 
+  <p>Whatsapp: +919988776655</p>
+  <p>Instagram: italiano_rest</p>
+</div>
+ </footer>
+
+</body>
+</html>
